@@ -21,6 +21,5 @@ COPY ./app .
 COPY --from=builder /opt/venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 
-WORKDIR /app
 ENTRYPOINT [ "flask" ]
 CMD [ "run" ]
