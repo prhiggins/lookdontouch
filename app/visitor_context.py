@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from typing import Dict, List
 
 @dataclass
 class VisitorContext:
@@ -16,7 +17,7 @@ class VisitorContext:
     The entire chain of addresses, in order, gathered from the contents of the `X-Forwarded-By` header.
     '''
 
-    scraped_cookies: list[str] = None
+    scraped_cookies: List[str] = None
     '''
     The contents of any cookies extracted from the user's client.
     '''
@@ -26,7 +27,7 @@ class VisitorContext:
     The client user-agent.
     '''
 
-    other_headers: dict[str] = None
+    other_headers: Dict[str, str] = None
     '''
     A dictionary keyed with any other headers in the request.
     '''
